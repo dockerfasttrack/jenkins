@@ -6,17 +6,17 @@ pipeline {
     stages {
         stage('Build') { 
             steps { 
-                bat cmd /c echo "Build"
+                bat 'cmd /c echo Build'
             }
         }
         stage('Test'){
             steps {
-                bat cmd /c echo "Test"
+                bat 'cmd /c echo Test'
             }
         }
         stage('Deploy') {
             steps {
-                bat cmd /c echo "Deploy"
+                bat 'cmd /c echo Deploy'
             }
         }
     }
