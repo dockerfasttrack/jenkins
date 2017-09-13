@@ -1,20 +1,22 @@
 pipeline {
-    agent master 
+    agent { 
+        label 'master'
+    }
 
     stages {
         stage('Build') { 
             steps { 
-                echo "Build"
+                bat cmd /c echo "Build"
             }
         }
         stage('Test'){
             steps {
-                echo "Test"
+                bat cmd /c echo "Test"
             }
         }
         stage('Deploy') {
             steps {
-                echo "Deploy"
+                bat cmd /c echo "Deploy"
             }
         }
     }
