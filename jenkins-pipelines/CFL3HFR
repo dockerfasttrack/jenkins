@@ -1,0 +1,23 @@
+pipeline {
+    agent { 
+        label 'CFCDSLVJ'
+    }
+
+    stages {
+        stage('Prepare') { 
+            steps { 
+                rafScript([actionBranch: 'CF_Green', autoUpdate: true, envFile: false, envFilePath: '', killProcesses: false, linkName: 'RAF Report', rafLocation: 'C:\\Program Files\\Verint\\Regression Automation Framework', rafParameters: [[name: 'Paramter1', value: 'Value1'], [name: 'Paramter1', value: 'Value2']], rdpDisconnect: true, removeFolders: false, script: 'dummy.script', scriptBranch: 'CF_Green_Acceptance'])
+            }
+        }
+        stage('Test'){
+            steps {
+                bat 'cmd /c echo Test'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                bat 'cmd /c echo Deploy'
+            }
+        }
+    }
+}
